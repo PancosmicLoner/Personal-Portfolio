@@ -47,7 +47,25 @@ let darkModeIcon = document.querySelector('#darkMode-icon');
 darkModeIcon.addEventListener('click', ()=>{
     darkModeIcon.classList.toggle('bx-sun');
     document.body.classList.toggle('dark-mode');
+
+    let theme;
+    if(document.body.classList.contains('dark-mode')){
+        theme = "DARK";
+    }
+    else{
+        theme = "LIGHT";
+    }
+    localStorage.setItem("PageTheme",JSON.stringify(theme));
 });
+
+let GetTheme = JSON.parse(localStorage.getItem("PageTheme"));
+
+if(GetTheme === 'DARK'){
+    darkModeIcon.classList.toggle('bx-sun');
+    document.body.classList = "dark-mode";
+}
+
+
 
 //scroll reveal
 ScrollReveal({ 
