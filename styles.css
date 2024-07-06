@@ -552,6 +552,7 @@ section{
 @media (max-width:768px){
     #menu-icon{
         display: block;
+        cursor: pointer;
     }
     #darkMode-icon{
         position: absolute;
